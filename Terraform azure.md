@@ -1,9 +1,9 @@
-`provider "azurerm" {
+provider "azurerm" {
   features {}
-  `subscription_id = "your_subscription_id_here"
+  subscription_id = "your_subscription_id_here"
   client_id       = "your_client_id_here"
   client_secret   = "your_client_secret_here"
-  tenant_id       = "your_tenant_id_here"`
+  tenant_id       = "your_tenant_id_here"
   # Other configuration settings for the Azure provider can go here
 }
 
