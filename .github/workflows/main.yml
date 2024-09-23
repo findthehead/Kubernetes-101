@@ -5,10 +5,8 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ghcr.io/pycqa/bandit/bandit
     steps:
       - name: Set up Docker
         run: |
-          sudo apt update
-          sudo apt install -y docker.io
-          docker run ghcr.io/pycqa/bandit/bandit .
+          bandit app.py
