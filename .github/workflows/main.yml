@@ -2,11 +2,20 @@ name: test
 
 on: 
   push:
-
+  workflow_dispatch:
 jobs:
   test:
-    runs-on: ghcr.io/pycqa/bandit/bandit
+    runs-on: ubuntu-latest
     steps:
-      - name: Set up Docker
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Install Bandit
+        run: |
+          sudo apt update
+          sudo apt install -y python3-pip
+          pip3 install bandit
+
+      - name: Run Bandit
         run: |
           bandit app.py
