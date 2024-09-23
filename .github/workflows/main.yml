@@ -1,0 +1,14 @@
+name: test
+
+on: 
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Docker
+        run: |
+          sudo apt update
+          sudo apt install -y docker.io
+          docker run ghcr.io/pycqa/bandit/bandit .
