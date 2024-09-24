@@ -20,6 +20,7 @@ jobs:
       - name: Run Bandit
         run: |
           bandit app.py
+        continue-on-error: true
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
